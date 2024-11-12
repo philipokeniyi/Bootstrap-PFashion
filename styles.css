@@ -1,0 +1,258 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+.header-top {
+  width: 80%;
+  padding: 1rem;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top-left {
+  display: flex;
+}
+
+.header-top-left ul,
+.header-top-right ul {
+  text-decoration: none;
+  list-style: none;
+  list-style-position: outside;
+  display: flex;
+  gap: 1rem;
+}
+.header-top-left a,
+.header-top-right a {
+  text-decoration: none;
+  color: black;
+}
+.header-top-left a:hover,
+.header-top-right a:hover {
+  color: rgb(255, 0, 0);
+}
+
+.header-top-right {
+  display: flex;
+  gap: 1rem;
+}
+.header-top-right-1 {
+  border-right: 1px solid black;
+}
+.header-top-right-1 a {
+  padding-right: 1rem;
+}
+.divider-line {
+  width: 100%;
+  border-bottom: 1px solid rgb(216, 212, 212);
+}
+
+@media (max-width: 950px) {
+  .header-top {
+    width: 95%;
+  }
+}
+@media (max-width: 700px) {
+  .header-top {
+    width: 100%;
+  }
+  .header-top-left {
+    display: none;
+  }
+}
+@media (max-width: 470px) {
+  .header-top {
+    display: none;
+  }
+}
+
+.comment-badge {
+  position: relative;
+  padding: 0.5em 1em; /* Adjust for a larger badge */
+  top: -5px;
+}
+
+.comment-badge::after {
+  content: "";
+  position: absolute;
+  bottom: -15px; /* Move the tail to the bottom of the badge */
+  right: 20px; /* Adjust horizontally */
+  width: 0;
+  height: 0;
+
+  border: 10px solid transparent;
+  border-top-color: #dc3545; /* Same color as the badge */
+}
+
+.header-bottom-right ul {
+  text-decoration: none;
+  list-style: none;
+  list-style-position: outside;
+  display: flex;
+  gap: 1rem;
+}
+.header-bottom-right a {
+  text-decoration: none;
+  color: black;
+}
+.header-bottom-right a:hover,
+.navbar-nav a:hover {
+  color: rgb(255, 0, 0);
+}
+
+@media (max-width: 992px) {
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .header-bottom {
+    margin-top: 0 !important;
+  }
+}
+
+/* carousel */
+.centered-caption {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  text-align: center;
+}
+
+.centered-caption h5 {
+  font-size: 3.3rem;
+  font-family: "Clicker Script", cursive;
+  font-weight: bold;
+  color: red;
+}
+.centered-caption p:nth-child(2) {
+  font-size: 3.3rem;
+  color: black;
+  font-family: "Jost", sans-serif;
+}
+.centered-caption p:nth-child(3) {
+  font-size: 1.5rem;
+  color: black;
+}
+.custom-carousel-control-prev-icon {
+  position: relative;
+  left: -30%;
+  opacity: 1;
+}
+.custom-carousel-control-next-icon {
+  position: relative;
+  right: -30%;
+  opacity: 1;
+}
+
+.flip-vertical {
+  transform: scaleX(-1);
+}
+.custom-carousel-control-prev-icon,
+.custom-carousel-control-next-icon {
+  background-color: rgb(155, 151, 151);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+@media (max-width: 992px) {
+  .centered-caption h5 {
+    font-size: 2rem;
+  }
+  .centered-caption p:nth-child(2) {
+    font-size: 2rem;
+  }
+  .centered-caption p:nth-child(3) {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .centered-caption h5 {
+    font-size: 1.5rem;
+  }
+  .centered-caption p:nth-child(2) {
+    font-size: 1.5rem;
+  }
+  .centered-caption p:nth-child(3) {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .centered-caption h5 {
+    font-size: 1.5rem;
+  }
+  .centered-caption p:nth-child(2) {
+    font-size: 1.2rem;
+  }
+  .centered-caption p:nth-child(3) {
+    display: none;
+  }
+  .custom-carousel-control-prev-icon,
+  .custom-carousel-control-next-icon {
+    background-color: rgb(155, 151, 151);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .centered-caption {
+    width: 100%;
+  }
+}
+
+/* All Fashion */
+
+.card {
+  border: none;
+  box-shadow: none;
+}
+.all-fashion .card img {
+  object-fit: cover;
+}
+.gradient-overlay {
+  transition: all 0.4s ease-out 0s;
+}
+.gradient-overlay::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Adjust height as needed */
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.021));
+  z-index: 1;
+}
+
+/* Positioning text above the gradient */
+.gradient-overlay h5,
+.gradient-overlay p {
+  position: relative;
+  z-index: 2;
+}
+#all-fashion-link {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+.all-fashion-col:hover #all-fashion-link {
+  display: inline;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

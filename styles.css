@@ -504,7 +504,25 @@
   background-color: #f3ead8;
 }
 
+@media (max-width:500px){
+
+  .the-breadcrumb-area {
+    height: 100px !important;
+  }
+  .the-breadcrumb-area div:nth-child(1) {
+    
+    padding: 1rem !important	;
+    height: 100px !important;
+  }
+  .breadcrumb-item{
+    font-size: 1.1rem !important;
+
+  }
+}
+
 /* category-container */
+
+
 .category-container {
   width: 80%;
 }
